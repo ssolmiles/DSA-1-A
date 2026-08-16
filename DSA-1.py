@@ -39,7 +39,7 @@ def two_sum(nums, target):
 
 
 def run_two_sum_demo():
-    print("=== PART 1: Two Sum (Hash Map) ===")
+    print("Two Sum (Hash Map)")
     nums = [2, 7, 11, 15]
     target = 9
     result = two_sum(nums, target)
@@ -86,7 +86,7 @@ def rotate_array(nums, k):
 
 
 def run_rotate_array_demo():
-    print("=== PART 2: Rotate Array In-Place ===")
+    print("Rotate Array In-Place") 
     nums = [1, 2, 3, 4, 5, 6, 7]
     k = 3
     print("Before:", nums, "| Rotate right by:", k)
@@ -129,7 +129,7 @@ def bubble_sort(nums):
 
 
 def run_bubble_sort_demo():
-    print("=== PART 3: Bubble Sort ===")
+    print("Bubble Sort")
     nums = [5, 1, 4, 2, 8, 0, 3]
     print("Before:", nums)
     bubble_sort(nums)
@@ -140,4 +140,5 @@ def run_bubble_sort_demo():
 if __name__ == "__main__":
     
     run_two_sum_demo()
-    
+    run_rotate_array_demo()
+    run_bubble_sort_demo()
