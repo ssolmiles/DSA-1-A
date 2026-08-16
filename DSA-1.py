@@ -95,7 +95,49 @@ def run_rotate_array_demo():
     print()
 
 
+#BUBBLE SORT
+
+# Problem: Sort an array from smallest to largest, WITHOUT using
+# Python's built-in sort()/sorted().
+#
+# Bubble Sort idea: repeatedly compare NEIGHBORING pairs of elements
+# and swap them if they're in the wrong order. After each full pass
+# through the array, the largest unsorted number "bubbles up" to its
+# correct spot at the end -- like a bubble rising to the top of water.
+#
+# Example: [5, 1, 4, 2, 8]
+#   Pass 1: compare (5,1)->swap, (5,4)->swap, (5,2)->swap, (5,8)->no swap
+#           result: [1, 4, 2, 5, 8]   <- 8 is now in its final spot
+#   Pass 2: [1, 2, 4, 5, 8]           <- 5 is now in its final spot
+#   ...continues until no swaps are needed.
+
+def bubble_sort(nums):
+    n = len(nums)
+
+    for pass_num in range(n - 1):
+        swapped = False
+
+        for i in range(n - 1 - pass_num):
+            if nums[i] > nums[i + 1]:
+                nums[i], nums[i + 1] = nums[i + 1], nums[i]
+                swapped = True
+
+        if not swapped:   # already sorted, no need to keep looping
+            break
+
+    return nums
+
+
+def run_bubble_sort_demo():
+    print("=== PART 3: Bubble Sort ===")
+    nums = [5, 1, 4, 2, 8, 0, 3]
+    print("Before:", nums)
+    bubble_sort(nums)
+    print("After: ", nums)
+    print()
+
+
 if __name__ == "__main__":
     
     run_two_sum_demo()
-    run_rotate_array_demo()
+    
