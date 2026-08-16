@@ -49,7 +49,53 @@ def run_two_sum_demo():
     print()
 
 
+#ROTATE ARRAY IN PLACE
+
+# Problem: Rotate an array to the RIGHT by k steps, using the SAME
+# array (no creating a brand new list to cheat).
+#
+# Example: nums = [1, 2, 3, 4, 5, 6, 7], k = 3
+#          -> [5, 6, 7, 1, 2, 3, 4]
+#
+# The trick: rotating right by k is the same as:
+#   1. Reverse the WHOLE array
+#   2. Reverse the FIRST k elements
+#   3. Reverse the REMAINING elements
+#
+# Example walkthrough with [1,2,3,4,5,6,7], k=3:
+#   Step 1 (reverse all):        [7,6,5,4,3,2,1]
+#   Step 2 (reverse first 3):    [5,6,7,4,3,2,1]
+#   Step 3 (reverse the rest):   [5,6,7,1,2,3,4]  <- done!
+
+def reverse_section(arr, start, end):
+    while start < end:
+        arr[start], arr[end] = arr[end], arr[start]
+        start += 1
+        end -= 1
+
+
+def rotate_array(nums, k):
+    n = len(nums)
+    k = k % n  # in case k is bigger than the 
+
+    reverse_section(nums, 0, n - 1)     # reverse whole array
+    reverse_section(nums, 0, k - 1)     # reverse first k elements
+    reverse_section(nums, k, n - 1)     # reverse the rest
+
+    return nums
+
+
+def run_rotate_array_demo():
+    print("=== PART 2: Rotate Array In-Place ===")
+    nums = [1, 2, 3, 4, 5, 6, 7]
+    k = 3
+    print("Before:", nums, "| Rotate right by:", k)
+    rotate_array(nums, k)
+    print("After: ", nums)
+    print()
+
+
 if __name__ == "__main__":
     
     run_two_sum_demo()
-    
+    run_rotate_array_demo()
