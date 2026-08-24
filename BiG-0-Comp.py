@@ -78,3 +78,12 @@ def merge(left, right):
 # O(n log n) time complexity
 numbers = [5, 2, 9, 1, 5, 6]
 print(merge_sort(numbers))  # [1, 2, 5, 5, 6, 9]
+
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+# exponential time complexity O(2^n)
+for i in range(10):
+    print(fibonacci(i), end=" ")  # 0 1 1 2 3 5 8 13 21 34
