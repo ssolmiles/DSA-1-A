@@ -31,3 +31,23 @@ def has_duplicates(arr):
 # Quadratic time complexity O(n^2)
 numbers = [1, 2, 3, 4, 2]
 print(has_duplicates(numbers)) 
+
+
+def binary_search(arr, target):
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+# Test (array must be sorted)
+numbers = [1, 3, 5, 7, 9, 11, 13]
+print(binary_search(numbers, 7))  
+#Logarithmic time complexity O(log n)
+
+
