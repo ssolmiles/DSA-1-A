@@ -19,3 +19,15 @@ def find_max(arr):
 # O(n) linear
 numbers = [3, 7, 2, 9, 4]
 print(find_max(numbers))  
+
+
+def has_duplicates(arr):
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            if i != j and arr[i] == arr[j]:
+                return True
+    return False
+
+# Quadratic time complexity O(n^2)
+numbers = [1, 2, 3, 4, 2]
+print(has_duplicates(numbers)) 
