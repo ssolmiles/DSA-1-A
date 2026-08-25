@@ -2,6 +2,14 @@
 DSA exploration
 
 Big O notation
+Array 
+Linked List
+
 Queues
 Stack
 Hash Map  
+
+Trees 
+Graphs
+
+Recursion 
