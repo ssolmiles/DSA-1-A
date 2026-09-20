@@ -53,3 +53,13 @@ def find_irrelevant(arr, target):
         if arr[i] == target:
             return i
     return
+
+
+def find_jumbled_words(target):
+    words = ["listen", "silent", "enlist", "inlets", "google", "glooge"]
+    jumbled_words = []
+    for word in words:
+        if sorted(word) == sorted(target):
+            jumbled_words.append(word)
+    return jumbled_words
+print(find_jumbled_words("listen"))
