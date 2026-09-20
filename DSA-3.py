@@ -45,3 +45,11 @@ def selection_sort(arr):
 
 
 print(selection_sort([5, 3, 6, 2, 10]))
+
+
+
+def find_irrelevant(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return
