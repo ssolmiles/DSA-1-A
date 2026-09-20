@@ -3,7 +3,7 @@
 import turtle
 import random
 
-random.seed()  
+random.seed()   
 
 
 stack_depth = 0
