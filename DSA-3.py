@@ -91,3 +91,6 @@ if __name__ == '__main__':
     target = 10
  
     findPair(nums, target)
+
+
+    # subarrays functions 
