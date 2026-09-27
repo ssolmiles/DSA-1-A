@@ -19,3 +19,14 @@ def append(self, data):
         self.tail = new_node
     self._length += 1
     return self
+
+
+def prepend(self, data):
+    new_node = Node(data)
+    if not self._length:
+        self.head = self.tail = new_node
+    else:
+        new_node.next = self.head
+        self.head = new_node
+    self._length += 1
+    return self
