@@ -30,3 +30,6 @@ def prepend(self, data):
         self.head = new_node
     self._length += 1
     return self
+
+
+#linked list
