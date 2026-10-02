@@ -32,4 +32,5 @@ def prepend(self, data):
     return self
 
 
-#linked list
+#linked list'
+#double linked list
