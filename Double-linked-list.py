@@ -129,4 +129,16 @@ class DoublyLinkedList:
  
 def title(n: int, text: str) -> None:
     print(f"\n{'=' * 60}\nSample {n}: {text}\n{'=' * 60}")
- 
+
+def sample_01_basic_operations():
+    title(1, "Basic operations")
+    dll = DoublyLinkedList([10, 20, 30])
+    dll.appendleft(5)
+    node_20 = dll.find(20)
+    dll.insert_after(node_20, 25)
+    print("List:", dll)
+    print("Reversed iteration:", list(reversed(dll)))
+    dll.remove_node(node_20)
+    print("After removing 20:", dll, "| size =", len(dll))
+    dll.reverse()
+    print("After reverse():", dll)
