@@ -142,3 +142,28 @@ def sample_01_basic_operations():
     print("After removing 20:", dll, "| size =", len(dll))
     dll.reverse()
     print("After reverse():", dll)
+
+
+class LRUCache:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.map: dict[Any, Node] = {}
+        self.order = DoublyLinkedList()  # head = most recent, tail = least recent
+ 
+    def get(self, key):
+        node = self.map.get(key)
+        if node is None:
+            return None
+        self.order.move_to_front(node)
+        return node.value[1]
+ 
+    def put(self, key, value):
+        if key in self.map:
+            node = self.map[key]
+            node.value = (key, value)
+            self.order.move_to_front(node)
+            return
+        if len(self.order) >= self.capacity:
+            old_key, _ = self.order.pop()
+            del self.map[old_key]
+        self.map[key] = self.order.appendleft((key, value))
