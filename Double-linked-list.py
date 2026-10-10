@@ -181,5 +181,12 @@ class DoublyLinkedList:
         self.tail = None
         self._length = 0
 
+    def print_forward(self):
+            current = self.head
+            while current:
+                print(current.value, end=" <-> ")
+                current = current.next
+            print("None")
+    
     
  
