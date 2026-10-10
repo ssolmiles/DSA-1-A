@@ -168,4 +168,13 @@ class LRUCache:
             del self.map[old_key]
         self.map[key] = self.order.appendleft((key, value))
 
+class Node: 
+    def __init__(self, value):
+        self.value = value
+        self.prev = None
+        self.next = None
+        self._length = 1  
+
+
+
  
