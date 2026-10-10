@@ -175,6 +175,11 @@ class Node:
         self.next = None
         self._length = 1  
 
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self._length = 0
 
-
+    
  
